@@ -5,13 +5,18 @@ namespace TreehouseDefense
 {
 	public class Path
 	{
-		private MapLocation[] _path;
+		private MapLocation[] _pathLocations;
 
 		public Path(MapLocation[] pathLocations)
 		{
-			_path = pathLocations;
+			_pathLocations = pathLocations;
 		}
 
-		public bool IsOnPath(MapLocation mapLocation) => _path.Contains(mapLocation);
+		public bool IsOnPath(MapLocation mapLocation) => _pathLocations.Contains(mapLocation);
+
+		public MapLocation GetLocationAt(int pathStep)
+		{
+			return (pathStep < _pathLocations.Length) ? _pathLocations[pathStep] : null;
+		}
 	}
 }
