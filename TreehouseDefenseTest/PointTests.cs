@@ -84,7 +84,7 @@ namespace TreehouseDefense.Test
 		public void EqualPointsHaveSameHashCodes()
 		{
 			var target = new Point(4, 5);
-			Assert.NotEqual(new Point(4, 5).GetHashCode(), target.GetHashCode());
+			Assert.Equal(new Point(4, 5).GetHashCode(), target.GetHashCode());
 		}
 	}
 }
